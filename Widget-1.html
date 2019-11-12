@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> Line Chart Js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/utilities.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.min.css" />
+
+</head>
+
+<body style="font-family: jost;">
+    <div class="grid-stack">
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
+            <div class="grid-stack-item-content">
+                <div class="card border border-gray-400 border-solid rounded-lg ">
+                    <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid">Your
+                        Heading Is Here</div>
+                    <div class="card-body">
+                        <div class="text-left text-4xl font-bold pt-5 pl-5">41.5%</div>
+                        <div class="text-center">
+                            <div id="bar-chart">
+                                <canvas id="linechart"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
+            <div class="grid-stack-item-content">
+                <div class="card border border-gray-400 border-solid rounded-lg  mt-16 bg-gray-900 text-gray-400">
+                    <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid">Your
+                        Heading Is Here</div>
+                    <div class="card-body">
+                        <div class="text-left text-5xl font-bold pt-5 pl-5">41.5%</div>
+                        <div class="text-center">
+                            <div id="bar-chart">
+                                <canvas id="linechart_1"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="grid-stack"> -->
+
+
+    <!-- <div class="card grid-stack-item border border-gray-400 border-solid rounded-lg max-w-md mx-auto overflow-hidden">
+        <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid  text-3xl pl-2 pt-2">Your Heading Is Here</div>
+        <div class="card-body">
+            <div class="text-left text-4xl font-bold pt-5 pl-5">41.5%</div>
+                <div class="text-center">
+                    <div id="bar-chart">
+                        <canvas id="linechart"> </canvas>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+
+    <div class="card grid-stack-item border border-gray-400 border-solid rounded-lg max-w-md mx-auto overflow-hidden mt-16 bg-gray-900 text-gray-400">
+            <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid  text-3xl pl-2 pt-2">Your Heading Is Here</div>
+            <div class="card-body">
+                <div class="text-left text-5xl font-bold pt-5 pl-5">41.5%</div>
+                    <div class="text-center">
+                        <div id="bar-chart">
+                            <canvas id="linechart_1"> </canvas>
+                        </div>
+                    </div>
+            </div>
+            
+        </div> -->
+
+    <!-- </div> -->
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.min.js'></script>
+    <script type="text/javascript"
+        src='https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.jQueryUI.min.js'></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.grid-stack').gridstack();
+        }); </script>
+    <script>
+
+        var line = document.getElementById('linechart').getContext('2d');
+        var linechart = new Chart(line, {
+            type: 'line',
+            data: {
+                labels: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune', 'Delhi', 'Mubbai', 'kerala', 'Nellore', 'Vizag', 'Guntur', 'Bhimavaram'],
+                datasets: [{
+                    data: [
+                        321,
+                        1241,
+                        2451,
+                        4144,
+                        4021,
+                        5541,
+                        5008,
+                        4868,
+                        8456,
+                        9458,
+                        10456],
+
+                    borderWidth: 1,
+                    borderColor: 'blue',
+                    pointRadius: 0,
+                    fill: 'false'
+                }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    }]
+                }
+            }
+        });
+
+
+
+        var line = document.getElementById('linechart_1').getContext('2d');
+        var linechart_1 = new Chart(line, {
+            type: 'line',
+            data: {
+                labels: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune', 'Delhi', 'Mubbai', 'kerala', 'Nellore', 'Vizag', 'Guntur', 'Bhimavaram'],
+                datasets: [{
+                    data: [
+                        321,
+                        1241,
+                        2451,
+                        4144,
+                        4021,
+                        5541,
+                        5008,
+                        4868,
+                        8456,
+                        9458,
+                        10456],
+
+                    borderWidth: 1,
+                    borderColor: 'blue',
+                    pointRadius: 0,
+                    fill: 'false'
+                }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

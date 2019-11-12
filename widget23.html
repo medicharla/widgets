@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-white rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-400 text-gray-600 ">Your Heading is Here</div>
+                
+                <div class="py-4">
+                        <canvas id="myPie1" height="100" width="200">
+                            </canvas>
+                </div>
+           
+            </div>
+        </div>
+
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-black rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-900 text-gray-400">Your Heading is Here</div>
+                
+                <div class="py-4">
+                    <canvas id="myPie2" height="100" width="200">
+                        </canvas>
+            </div>
+                
+            </div>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <script>
+        var c = document.getElementById('myPie1').getContext('2d');
+        var myPie1 = new Chart(c,{
+            type:'pie',
+            data:{
+                labels:['Label1','Label2','Label3'],
+                datasets:[{
+                    data:[20, 70, 10],
+                    backgroundColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(244, 67, 54, 1)'
+                    ],
+                    borderColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(244, 67, 54, 1)'
+                    ]
+                }]
+            },
+            options: {
+               
+                legend:{
+                   display:true,
+                   position:'right',
+                   labels:{
+                    fontSize:15,
+                    padding:15,
+                    fontColor:'#343a40'
+                    
+                }
+                
+            }
+            },
+           
+
+        });
+    </script>
+    <script>
+        var c = document.getElementById('myPie2').getContext('2d');
+        var myPie2 = new Chart(c,{
+            type:'pie',
+            data:{
+                labels:['Label1','Label2','Label3'],
+                datasets:[{
+                    data:[20, 70, 10],
+                    backgroundColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(244, 67, 54, 1)'
+                    ],
+                    borderColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(244, 67, 54, 1)'
+                    ]
+                }]
+            },
+            options: {
+                legend:{
+                   display:true,
+                   position:'right',
+                   align: 'center',
+                   labels:{
+                    fontSize:15,
+                    padding:15,
+                    fontColor:'white'
+                   }
+                }
+                
+            }
+
+        });
+    </script>
+    
+</html>

@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center  w-2/5 bg-white rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-400 text-gray-600 ">Your Heading Here </div>
+                <div class="flex justify-end items-center h-8">
+                        <span class="inline-block h-4 w-8 bg-blue-400 mr-2"></span>
+                        <span class="text-left font-xl p-4">Total Sales</span>
+                </div>  
+                <div class="flex justify-end items-center h-8">
+                        <span class="inline-block h-4 w-8 bg-yellow-400 mr-4"></span>
+                        <span class="text-left font-xl p-4">Avg Sales</span>
+                </div>            
+                <div class="p-3">
+                        <canvas id="myChart1">
+                            </canvas>
+                 </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-black rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-800 text-gray-400">Your Heading Here</div>
+                <div class="flex justify-end items-center h-8">
+                        <span class="inline-block h-4 w-8 bg-blue-400 mr-2"></span>
+                        <span class="text-left font-white font-xl p-4">Total Sales</span>
+                </div>  
+                <div class="flex justify-end items-center h-8">
+                        <span class="inline-block h-4 w-8 bg-yellow-400 mr-4"></span>
+                        <span class="text-left font-white font-xl p-4">Avg Sales</span>
+                </div>   
+                <div class="p-3">
+                        <canvas id="myChart2">
+                            </canvas>
+                 </div>
+            </div>
+        </div>
+              
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+            var ctx = document.getElementById('myChart1').getContext('2d');
+            var myChart1 = new Chart(ctx,{
+                type:'bar',
+                data:{
+                    labels:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Q11','Q12','Q13','Q14','Q15'],
+                    datasets:[
+                    {
+                    label: 'Average Time',
+                    data: [30, 10, 60, 50, 70,10,35,30,40,30,70,5,45,30,70],
+                    type: 'line',
+                    fill: false,
+                    borderColor:[
+                            'rgba(255, 206, 86, 1)'
+                    
+                    ]
+
+                },
+                        {
+                        label:'Attempts',
+                       
+                        data: [50, 30, 80, 70, 80,20,60,40,50,30,80,10,59,35,85,],
+                        backgroundColor:
+                                'rgba(54, 162, 235, 1)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                    },
+                    ]
+                },
+                
+                    options: {
+                        legend:{
+                            display: false
+                        },
+                        elements: {
+                                    line: {
+                                        tension: 0
+                                },
+                            point:{
+                                radius: 0
+                            }
+                            },
+                   
+                    scales: {
+                         xAxes: [{
+                            display: false
+                        }],
+                         yAxes: [{
+                            display: false   
+                        }]
+                },
+            	
+                }
+                    
+                });
+    
+        </script>
+        <script>
+                var ctx = document.getElementById('myChart2').getContext('2d');
+                var myChart2 = new Chart(ctx,{
+                    type:'bar',
+                    data:{
+                        labels:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Q11','Q12','Q13','Q14','Q15'],
+                        datasets:[
+                        {
+                        label: 'Average Time',
+                        data: [30, 10, 60, 50, 70,10,35,30,40,30,70,5,45,30,70],
+                        type: 'line',
+                        fill: false,
+                        borderColor:[
+                                'rgba(255, 206, 86, 1)'
+                        
+                        ]
+    
+                    },
+                            {
+                            label:'Attempts',
+                           
+                            data: [50, 30, 80, 70, 80,20,60,40,50,30,80,10,59,35,85,],
+                            backgroundColor:
+                                    'rgba(54, 162, 235, 1)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                        },
+                        ]
+                    },
+                    
+                        options: {
+                            legend:{
+                                display: false
+                            },
+                            elements: {
+                                        line: {
+                                            tension: 0
+                                    },
+                                point:{
+                                    radius: 0
+                                }
+                                },
+                       
+                        scales: {
+                             xAxes: [{
+                                display: false
+                            }],
+                             yAxes: [{
+                                display: false   
+                            }]
+                    },
+                    
+                    }
+                        
+                    });
+        
+            </script>
+        
+</html>

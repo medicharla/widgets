@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-white rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-400 text-gray-600 ">Your Heading is Here</div>
+                        <div class="flex items-center p-6">
+                                <div class="w-1/2">
+                                        <canvas id="myDought1">
+                                        </canvas>
+                                </div>
+                                <div class="w-1/2">
+                                    <span class="font-semibold  text-lg  text-gray-600">Avg. Call Duration</span> 
+                                    <span class="font-black text-4xl pt-8">0m:26s</span>                     
+                                 </div>
+                        </div> 
+            </div>
+        </div>
+
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-black rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-800 text-gray-400">Your Heading is Here</div>
+                <div class="flex items-center p-6">
+                        <div class="w-1/2">
+                                <canvas id="myDought2">
+                                </canvas>
+                        </div>
+                        <div class="w-1/2">
+                            <span class="font-semibold  text-lg  text-gray-600">Avg. Call Duration</span> 
+                                    <span class="text-white font-black text-4xl pt-8">0m:26s</span>                     
+                 </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+        var c = document.getElementById('myDought1').getContext('2d');
+        var myDought1 = new Chart(c,{
+            type:'doughnut',
+            data:{
+                labels:['Label1','Label2'],
+                datasets:[{
+                    data:[49, 51],
+                    backgroundColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(194, 205, 220, 1)',
+                           
+                    ],
+                    borderColor:[
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(194, 205, 220, 1)',
+                    ]
+                }]
+            },
+            options: {
+                cutoutPercentage: 70,
+                responsive: true,
+                legend:{
+                   display:false,
+                   position:'right',
+                //    labels:{
+                //     fontSize:15,
+                //     padding:15,
+                //     fontColor:'#343a40'
+                // }
+                
+            }
+            
+            },
+            centerText: {
+        display: true,
+        text: "280"
+    }
+           
+
+        });
+    </script>
+    <script>
+            var c = document.getElementById('myDought2').getContext('2d');
+            var myDought1 = new Chart(c,{
+                type:'doughnut',
+                data:{
+                    labels:['Label1','Label2'],
+                    datasets:[{
+                        data:[49, 51],
+                        backgroundColor:[
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(122, 139, 160, 1)',
+                               
+                        ],
+                        borderColor:[
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(122, 139, 160, 1)',
+                        ]
+                    }]
+                },
+                options: {
+                    cutoutPercentage: 70,
+                    responsive: true,
+                    legend:{
+                       display:false,
+                       position:'right',
+                    //    labels:{
+                    //     fontSize:15,
+                    //     padding:15,
+                    //     fontColor:'#343a40'
+                    // }
+                    
+                }
+                
+                },
+                centerText: {
+            display: true,
+            text: "280"
+        }
+               
+    
+            });
+        </script>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+		
+        <script>
+            feather.replace()
+        </script>
+</html>

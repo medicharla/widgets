@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center  w-2/5 bg-white rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-400 text-gray-600 ">Your Heading is Here</div>                
+                
+                <div class="p-3">
+                        <canvas id="myChart1">
+                            </canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center flex-wrap bg-white p-6">
+            <div class="flex-content-center w-2/5 bg-black rounded-lg border border-gray-400">
+                <div class="content-start text-lg font-semibold p-2 border-b border-gray-800 text-gray-400">Your Heading is Here</div>
+                <div class="p-3">
+                        <canvas id="myChart2">
+                            </canvas>
+                </div>
+            </div>
+        </div>
+              
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+            var ctx = document.getElementById('myChart1').getContext('2d');
+            var myChart1 = new Chart(ctx,{
+                type:'line',
+                data:{
+                    labels:['Jan','Feb','Mar','April','May','Jun','Juy'],
+                    datasets:[{
+                        label: 'Mobile Sales',
+                        data: ['$10', '$30', '$20', '$40', '$50', '$20','$70'],
+                        backgroundColor:'rgba(255,255,255)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                    },
+                    {
+                        label: 'Desktop Sales',
+                        data: ['$20', '$40', '$30', '$50', '$60', '$30','$60'],
+                        backgroundColor:'rgba(255,255,255)',
+                        borderColor: 'rgba(255, 206, 86, 1)'
+                    }]
+                    
+    
+                    },
+                    options: {
+                        legend:{
+                            display: true
+                        },
+                        elements: {
+                                
+                        point:{
+                            radius: 0
+                        }
+                        },
+                        scales: {
+                        xAxes: [{
+                        gridLines: {
+                            display:false
+                        }
+                         }],
+                        yAxes: [{
+                        type: 'category',
+                        labels: ['$70', '$60', '$50', '$40', '$30', '$20','$10'],
+                        gridLines: {
+                             display:false
+                        }   
+                         }]
+                    }		
+                            
+                }
+                    
+                });
+    
+        </script>
+        <script>
+                var ctx = document.getElementById('myChart2').getContext('2d');
+                var myChart2 = new Chart(ctx,{
+                    type:'line',
+                    data:{
+                        labels:['Jan','Feb','Mar','April','May','Jun','Juy'],
+                        datasets:[{
+                            label: 'Mobile Sales',
+                            data: ['$10', '$30', '$20', '$40', '$50', '$20','$70'],
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                        },
+                        {
+                            label: 'Desktop Sales',
+                            data: ['$20', '$40', '$30', '$50', '$60', '$30','$60'],
+                            borderColor: 'rgba(255, 206, 86, 1)'
+                        }]
+                        
+        
+                        },
+                        options: {
+                            legend:{
+                                display: true,
+                                backgroundColor: 'rgba(54, 162, 235, 1)',
+                            },
+                            elements: {
+                                    
+                            point:{
+                                radius: 0
+                            }
+                            },
+                            scales: {
+                            xAxes: [{
+                            gridLines: {
+                                display:false
+                            }
+                             }],
+                            yAxes: [{
+                            type: 'category',
+                            labels: ['$70', '$60', '$50', '$40', '$30', '$20','$10'],
+                            gridLines: {
+                                 display:false
+                            }   
+                             }]
+                        }		
+                                
+                    }
+                        
+                    });
+        
+            </script>
+        
+</html>

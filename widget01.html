@@ -1,0 +1,160 @@
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/utilities.min.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.min.css" />
+</head>
+
+<body>
+        <div class="grid-stack">
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
+                    <div class="grid-stack-item-content">    
+    <div class="flex justify-center flex-wrap bg-white p-6">
+        <div class="flex-content-center flex-wrap w-2/5 bg-white rounded-lg border border-gray-400">
+            <div class="content-start text-lg font-semibold p-2 border-b border-gray-400 text-gray-600 ">Your Heading is
+                Here</div>
+            <div class="p-3">
+                <div class="text-start font-black text-4xl">41.5%</div>
+                <div>
+                    <canvas id="myChart1">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+<div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
+<div class="grid-stack-item-content">
+    <div class="flex justify-center flex-wrap bg-white p-6">
+        <div class="flex-content-center flex-warp w-2/5 bg-black rounded-lg border border-gray-400">
+            <div class="flex-shrink content-start text-lg font-semibold p-2 border-b border-gray-800 text-gray-400">Your Heading is
+                Here</div>
+            <div class="p-3">
+                <div class="text-white text-start font-black text-4xl">41.5%</div>
+                <div>
+                    <canvas id="myChart2">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.min.js'></script>
+    <script type="text/javascript"
+        src='https://cdn.jsdelivr.net/npm/gridstack@0.5.1/dist/gridstack.jQueryUI.min.js'></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.grid-stack').gridstack();
+        }); </script>
+
+<script>
+    var chart_data = [];
+    var label_data = [];
+    for (var i = 1; i <= 50; i++) {
+        chart_data.push(Math.floor(Math.random() * Math.floor(50)));
+        label_data.push('Q' + i);
+
+    }
+
+    var ctx = document.getElementById('myChart1').getContext('2d');
+    var myChart1 = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: label_data,
+            label: 'Attempts',
+            datasets: [{
+                data: chart_data,
+                backgroundColor:
+                    'rgba(255,255,255)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+            }]
+        },
+        options: {
+            bezierCurve: false,
+            legend: {
+                display: false
+            },
+            elements: {
+                line: {
+                    tension: 0
+                },
+                point: {
+                    radius: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: false
+                }],
+                yAxes: [{
+                    display: false
+                }]
+            },
+        }
+    });
+
+</script>
+<script>
+    var chart_data = [];
+    var label_data = [];
+    for (var i = 1; i <= 50; i++) {
+        chart_data.push(Math.floor(Math.random() * Math.floor(50)));
+        label_data.push('Q' + i);
+
+    }
+
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart2 = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: label_data,
+            label: 'Attempts',
+            datasets: [{
+                data: chart_data,
+                backgroundColor:
+                    'rgba(0,0,0)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+            }]
+        },
+        options: {
+            bezierCurve: false,
+            legend: {
+                display: false
+            },
+            elements: {
+                line: {
+                    tension: 0
+                },
+                point: {
+                    radius: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: false
+                }],
+                yAxes: [{
+                    display: false
+                }]
+            },
+        }
+    });
+
+</script>
+
+</html>

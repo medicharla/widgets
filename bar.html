@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title> chart Js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/utilities.min.css">
+</head>
+<body style="font-family: jost;">
+
+    <div class="card border border-gray-400 border-solid rounded-lg max-w-md mx-auto overflow-hidden">
+        <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid  text-3xl pl-2 pt-2">Your Heading Is Here</div>
+        <div class="card-body">
+            <div class="text-left text-6xl font-bold pt-5 pl-5">25161</div>
+                <div class="text-center">
+                    <div id="bar-chart">
+                        <canvas id="chart"> </canvas>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+
+    <div class="card border border-gray-400 border-solid rounded-lg max-w-md mx-auto overflow-hidden mt-16 bg-gray-900 text-gray-400">
+            <div class="card-header border border-t-0 border-l-0 border-r-0 border-gray-400 border-solid  text-3xl pl-2 pt-2">Your Heading Is Here</div>
+            <div class="card-body">
+                <div class="text-left text-6xl font-bold pt-5 pl-5">25161</div>
+                    <div class="text-center">
+                        <div id="bar-chart">
+                            <canvas id="chart_1"> </canvas>
+                        </div>
+                    </div>
+            </div>
+            
+        </div>
+
+
+    
+    <script>
+        
+        var line = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(line,{
+            type:'bar',
+            data:{
+                labels:['Bengaluru','Chennai','Hyderabad','Pune','Delhi','Mubbai','kerala','Nellore','Vizag','Guntur','Bhimavaram','Bengaluru','Chennai','Hyderabad','Pune','Delhi','Mubbai','kerala','Nellore','Vizag','Guntur','Bhimavaram'],
+                datasets:[{
+                    data:[
+                    21,
+                    41,
+                    55,
+                    34,
+                    42,
+                    50,
+                    58,
+                    62,
+                    80,
+                    48,
+                    98,
+                    81,
+                    41,
+                    55,
+                    34,
+                    42,
+                    50,
+                    58,
+                    62,
+                    80,
+                    48,
+                    90 ],
+                   
+                    borderWidth:1,
+                    borderColor:'blue',
+                    backgroundColor:'blue',
+                    pointRadius: 0,
+                    fill:'false'
+                }  
+                ]
+            },
+            options:{
+                legend:{
+                    display:false,
+                },
+                scales: {
+        xAxes: [{
+            gridLines: {
+                drawBorder: false,
+                display:false
+            },
+            ticks: {
+                display: false
+            }
+
+        }],
+        yAxes: [{
+            gridLines: {
+                drawBorder: false,
+                display:false
+            },
+            ticks: {
+                display: false
+            }   
+        }]
+    }
+            }
+        });
+
+
+
+        var line = document.getElementById('chart_1').getContext('2d');
+        var chart_1 = new Chart(line,{
+            type:'bar',
+            data:{
+                labels:['Bengaluru','Chennai','Hyderabad','Pune','Delhi','Mubbai','kerala','Nellore','Vizag','Guntur','Bhimavaram','Bengaluru','Chennai','Hyderabad','Pune','Delhi','Mubbai','kerala','Nellore','Vizag','Guntur','Bhimavaram'],
+                datasets:[{
+                    data:[
+                    21,
+                    41,
+                    55,
+                    34,
+                    42,
+                    50,
+                    58,
+                    62,
+                    80,
+                    48,
+                    98,
+                    81,
+                    41,
+                    55,
+                    34,
+                    42,
+                    50,
+                    58,
+                    62,
+                    80,
+                    48,
+                    90  ],
+                   
+                    borderWidth:1,
+                    borderColor:'blue',
+                    backgroundColor:'blue',
+                    pointRadius: 0,
+                    fill:'false'
+                }  
+                ]
+            },
+            options:{
+                legend:{
+                    display:false,
+                },
+                scales: {
+        xAxes: [{
+            gridLines: {
+                drawBorder: false,
+                display:false
+            },
+            ticks: {
+                display: false
+            }
+
+        }],
+        yAxes: [{
+            gridLines: {
+                drawBorder: false,
+                display:false
+            },
+            ticks: {
+                display: false
+            }   
+        }]
+    }
+            }
+        });
+    </script>
+    
+</body>
+</html>
